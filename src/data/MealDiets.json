@@ -1,0 +1,188 @@
+[
+  {
+    "type": "classic",
+    "title": "Classic",
+    "plans": [
+      {
+        "id": "101",
+        "title": "Classic 1600-1800 (2 times + 1 snack)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "102",
+        "title": "Classic 1600-1800 (3 times no snacks)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "103",
+        "title": "Classic 1800-2000 (3 times no snacks)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "104",
+        "title": "Classic 1800-2000 (3 times + 1 snack)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "105",
+        "title": "Classic 2000-2200 (3 times + 1 snack)",
+        "kcalMax": 2200,
+        "kcalMin": 2000
+      },
+      {
+        "id": "106",
+        "title": "Classic 2200-2400 (3 times + 1 snack)",
+        "kcalMax": 2400,
+        "kcalMin": 2200
+      },
+      {
+        "id": "107",
+        "title": "Classic 2400-2600 (3 times + 2 snacks)",
+        "kcalMax": 2600,
+        "kcalMin": 2400
+      },
+      {
+        "id": "108",
+        "title": "Classic 2600-2800 (3 times + 2 snacks)",
+        "kcalMax": 2800,
+        "kcalMin": 2600
+      }
+    ]
+  },
+  {
+    "type": "pesco",
+    "title": "Pescatarian",
+    "plans": [
+      {
+        "id": "201",
+        "title": "Pesco 1600-1800 (2 times + 1 snack)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "202",
+        "title": "Pesco 1600-1800 (3 times no snacks)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "203",
+        "title": "Pesco 1800-2000 (3 times no snacks)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "204",
+        "title": "Pesco 1800-2000 (3 times + 1 snack)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "205",
+        "title": "Pesco 2000-2200 (3 times + 1 snack)",
+        "kcalMax": 2200,
+        "kcalMin": 2000
+      },
+      {
+        "id": "206",
+        "title": "Pesco 2200-2400 (3 times + 1 snack)",
+        "kcalMax": 2400,
+        "kcalMin": 2200
+      },
+      {
+        "id": "207",
+        "title": "Pesco 2400-2600 (3 times + 2 snacks)",
+        "kcalMax": 2600,
+        "kcalMin": 2400
+      },
+      {
+        "id": "208",
+        "title": "Pesco 2600-2800 (3 times + 2 snacks)",
+        "kcalMax": 2800,
+        "kcalMin": 2600
+      }
+    ]
+  },
+  {
+    "type": "vegetarian",
+    "title": "Vegetarian",
+    "plans": [
+      {
+        "id": "301",
+        "title": "Vegetarian 1600-1800 (2 times + 1 snack)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "302",
+        "title": "Vegetarian 1600-1800 (3 times no snacks)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "303",
+        "title": "Vegetarian 1800-2000 (3 times no snacks)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "304",
+        "title": "Vegetarian 1800-2000 (3 times + 1 snack)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "305",
+        "title": "Vegetarian 2000-2200 (3 times + 1 snack)",
+        "kcalMax": 2200,
+        "kcalMin": 2000
+      },
+      {
+        "id": "306",
+        "title": "Vegetarian 2200-2400 (3 times + 1 snack)",
+        "kcalMax": 2400,
+        "kcalMin": 2200
+      },
+      {
+        "id": "307",
+        "title": "Vegetarian 2400-2600 (3 times + 2 snacks)",
+        "kcalMax": 2600,
+        "kcalMin": 2400
+      }
+    ]
+  },
+  {
+    "type": "vegan",
+    "title": "Fully plant-based",
+    "plans": [
+      {
+        "id": "401",
+        "title": "Vegan 1600-1800 (3 times no snacks)",
+        "kcalMax": 1800,
+        "kcalMin": 1600
+      },
+      {
+        "id": "402",
+        "title": "Vegan 1800-2000 (3 times no snacks)",
+        "kcalMax": 2000,
+        "kcalMin": 1800
+      },
+      {
+        "id": "403",
+        "title": "Vegan 2000-2200 (3 times + 1 snack)",
+        "kcalMax": 2200,
+        "kcalMin": 2000
+      },
+      {
+        "id": "404",
+        "title": "Vegan 2200-2400 (3 times + 2 snacks)",
+        "kcalMax": 2400,
+        "kcalMin": 2200
+      }
+    ]
+  }
+]

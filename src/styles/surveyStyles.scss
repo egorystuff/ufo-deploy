@@ -1,0 +1,253 @@
+@use "./_variables.scss" as vars;
+
+.container {
+  max-width: 475px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: white !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 650px;
+}
+
+.survey-subtitle {
+  font-size: 14px !important;
+  font-weight: 450 !important;
+  color: vars.$secondary-text-color !important;
+  margin-top: 12px !important;
+}
+
+.accept-text {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: vars.$secondary-color !important;
+  text-align: left !important;
+}
+
+//=============================================================================
+//=============================================================================
+
+.survey-select-button {
+  height: 64px !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  border-radius: 5px !important;
+  background-color: vars.$primary-bg-color !important;
+  color: vars.$primary-color !important;
+  box-shadow: none !important;
+  border: 0.4px solid vars.$border-color !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  font-weight: 450 !important;
+
+  &:hover {
+    background-color: vars.$secondary-bg-color !important;
+    border-color: vars.$secondary-bg-color !important;
+  }
+}
+
+.base-select-button {
+  height: 64px !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  margin-bottom: 8px !important;
+  border-radius: 5px !important;
+  background-color: vars.$primary-bg-color !important;
+  color: vars.$primary-color !important;
+  box-shadow: none !important;
+  border: 0.4px solid vars.$border-color !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  font-weight: 450 !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 16px !important;
+
+  &:hover {
+    background-color: vars.$secondary-bg-color !important;
+    border-color: vars.$secondary-bg-color !important;
+  }
+
+  .button-left-text {
+    flex-grow: 1 !important;
+    text-align: left !important;
+    font-weight: 450 !important;
+  }
+
+  .button-right-text {
+    color: vars.$secondary-color !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin-left: 16px !important;
+  }
+
+  &.with-right-text {
+    height: 84px !important;
+    .button-right-text {
+      margin-left: 8px !important;
+    }
+  }
+}
+
+//=============================================================================
+//=============================================================================
+
+.survey-next-button {
+  height: 54px !important;
+  border-radius: 8px !important;
+  background-color: vars.$secondary-color !important;
+  box-shadow: none !important;
+  border: 0.4px solid vars.$secondary-bg-color !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 92, 29, 0.8) !important;
+  }
+}
+
+.email-button {
+  height: 54px !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  border: 0.4px solid vars.$secondary-bg-color !important;
+  text-transform: none !important;
+  font-size: 18px !important;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 92, 29, 0.8) !important;
+  }
+}
+
+.secondary-button {
+  height: 54px !important;
+  border-radius: 8px !important;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  border: 0.4px solid vars.$secondary-color !important;
+  color: vars.$secondary-color !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: vars.$primary-bg-color !important;
+  }
+}
+
+//=============================================================================
+//=============================================================================
+
+.survey-input {
+  width: 100%;
+  margin-top: 24px;
+  position: relative;
+
+  .input-wrapper {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: #ffffff;
+
+    &.error {
+      border-color: #f9523c;
+    }
+
+    // &:focus-within {
+    //   border-color: vars.$secondary-border-color;
+    // }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 20px;
+      color: vars.$primary-color;
+      background-color: transparent;
+      height: 100%;
+      line-height: 64px;
+      text-align: center;
+      padding: 0;
+
+      &::placeholder {
+        color: #a0a0a0;
+        line-height: 64px;
+        text-align: center;
+      }
+    }
+
+    .input-label {
+      font-size: 20px;
+      font-weight: 400;
+      color: vars.$primary-color;
+      margin-left: 8px;
+    }
+  }
+
+  .error-message {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: vars.$secondary-color;
+    margin-top: 24px;
+    margin-left: 0;
+  }
+}
+
+//=============================================================================
+//=============================================================================
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  border: 0.4px solid vars.$border-color;
+  background-color: vars.$primary-bg-color;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: vars.$secondary-bg-color;
+  }
+
+  .checkbox-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 0.4px solid #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+
+    &.checked {
+      background-color: vars.$primary-color;
+      border: none;
+    }
+  }
+
+  .checkbox-label {
+    color: vars.$primary-color;
+    font-size: 16px;
+    font-weight: 450;
+  }
+}

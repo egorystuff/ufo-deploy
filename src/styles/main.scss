@@ -1,0 +1,63 @@
+@use "./surveyStyles";
+@use "./_variables.scss" as vars;
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  position: static;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  width: calc(100% - 40px);
+  z-index: -100;
+  pointer-events: none;
+}
+
+.email-input {
+  width: 100%;
+  margin-top: 24px;
+  position: relative;
+
+  .input-wrapper {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    border: 0.4px solid #241063;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: #ffffff;
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 20px;
+      color: vars.$primary-color;
+      background-color: transparent;
+      height: 100%;
+      line-height: 64px;
+      text-align: left;
+      padding: 0;
+
+      &::placeholder {
+        color: #a0a0a0;
+        line-height: 64px;
+        text-align: left;
+      }
+    }
+  }
+
+  .error-message {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: vars.$secondary-color;
+    margin-top: 24px;
+    margin-left: 0;
+  }
+}
