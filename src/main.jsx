@@ -38,7 +38,9 @@ const App = () => {
     },
   ];
 
-  const router = createBrowserRouter(routes);
+  const router = createBrowserRouter(routes, {
+    basename: import.meta.env.MODE === "development" ? "/" : "/ufo-deploy/",
+  });
 
   return (
     <ThemeProvider theme={theme}>
