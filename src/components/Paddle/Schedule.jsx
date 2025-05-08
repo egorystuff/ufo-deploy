@@ -3,7 +3,7 @@ import { useUserStore } from "@/store/store";
 
 // SVGs
 const LARGE_DIFFERENCE_SVG = (
-  <svg width='371' height='215' viewBox='0 0 371 215' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg viewBox='0 0 371 215' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M220.331 130.752C219.936 131.176 219.264 131.177 218.868 130.752L209.877 121.098H192C189.791 121.098 188 119.307 188 117.098V62.457C188 60.2479 189.791 58.457 192 58.457H245.984C248.193 58.4572 249.984 60.248 249.984 62.457V117.098C249.984 119.307 248.193 121.098 245.984 121.098H229.322L220.331 130.752Z'
       fill='#FF5D1E'
@@ -41,7 +41,7 @@ const LARGE_DIFFERENCE_SVG = (
 );
 
 const SMALL_DIFFERENCE_SVG = (
-  <svg width='371' height='152' viewBox='0 0 371 152' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg viewBox='0 0 371 152' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M215.331 81.752C214.936 82.1765 214.264 82.1766 213.868 81.752L204.877 72.0977H187C184.791 72.0977 183 70.3068 183 68.0977V13.457C183 11.2479 184.791 9.45703 187 9.45703H240.984C243.193 9.45718 244.984 11.248 244.984 13.457V68.0977C244.984 70.3067 243.193 72.0975 240.984 72.0977H224.322L215.331 81.752Z'
       fill='#FF5D1E'
@@ -225,8 +225,8 @@ export const Schedule = () => {
                 top: "-5px",
                 left: "20px",
                 color: "#241063",
+                fontSize: window.innerWidth <= 445 ? "14px" : "16px",
                 fontWeight: "500",
-                fontSize: "18px",
               }}>
               {convertWeight(realUserWeight)} {measurementSystem === "imperial" ? "lbs" : "kg"}
             </div>
@@ -235,9 +235,10 @@ export const Schedule = () => {
               <div
                 style={{
                   position: "absolute",
-                  top: "62px",
-                  left: "215px",
+                  top: "29%",
+                  left: "54%",
                   color: "#FFFFFF",
+                  fontSize: window.innerWidth <= 445 ? "12px" : "16px",
                   fontWeight: "bold",
                 }}>
                 Goal <br />
@@ -249,9 +250,10 @@ export const Schedule = () => {
               <div
                 style={{
                   position: "absolute",
-                  top: "72px",
-                  left: "210px",
+                  top: "32%",
+                  left: realIdealWeight >= 100 ? "53%" : "54%",
                   color: "#FFFFFF",
+                  fontSize: window.innerWidth <= 445 ? "13px" : "16px",
                   fontWeight: "bold",
                 }}>
                 Goal <br />

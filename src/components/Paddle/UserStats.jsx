@@ -115,13 +115,42 @@ export const UserStats = () => {
         </Box>
 
         <Box sx={{ flexGrow: 1 }}>
-          <Typography variant='h4' fontWeight={500} color='primary.main' align='center' fontSize={32}>
+          <Typography
+            variant='h4'
+            fontWeight={500}
+            color='primary.main'
+            align='center'
+            fontSize={{
+              fontSize: 32,
+              "@media (max-width: 445px)": {
+                fontSize: 24,
+              },
+            }}>
             15+ Million
           </Typography>
-          <Typography variant='body1' color='primary.main' align='center' sx={{ mt: 1 }} fontSize={18}>
+          <Typography
+            variant='body1'
+            color='primary.main'
+            align='center'
+            sx={{ mt: 1 }}
+            fontSize={{
+              fontSize: 18,
+              "@media (max-width: 445px)": {
+                fontSize: 14,
+              },
+            }}>
             users started their weight
           </Typography>
-          <Typography variant='body1' color='primary.main' align='center' fontSize={18}>
+          <Typography
+            variant='body1'
+            color='primary.main'
+            align='center'
+            fontSize={{
+              fontSize: 18,
+              "@media (max-width: 445px)": {
+                fontSize: 14,
+              },
+            }}>
             loss journey with us
           </Typography>
         </Box>
@@ -139,8 +168,17 @@ export const UserStats = () => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            width: "100%",
           }}>
-          <Box>
+          <Box
+            sx={{
+              width: "35%",
+              maxWidth: "128px",
+              svg: {
+                width: "100%",
+                height: "auto",
+              },
+            }}>
             <svg width='128' height='74' viewBox='0 0 108 54' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path
                 fillRule='evenodd'
@@ -179,7 +217,19 @@ export const UserStats = () => {
             </svg>
           </Box>
 
-          <Box>
+          <Box
+            sx={{
+              width: "55%",
+              a: {
+                display: "block",
+                width: "100%",
+                height: "auto",
+                svg: {
+                  width: "100%",
+                  height: "auto",
+                },
+              },
+            }}>
             <Link
               href='https://apps.apple.com'
               target='_blank'
@@ -246,7 +296,13 @@ export const UserStats = () => {
           variant='h5'
           align='center'
           gutterBottom
-          sx={{ color: "primary.main", fontSize: "26px", fontWeight: 700, mt: 3 }}>
+          fontSize={{
+            fontSize: 26,
+            "@media (max-width: 445px)": {
+              fontSize: 22,
+            },
+          }}
+          sx={{ color: "primary.main", fontWeight: 700, mt: 3 }}>
           Over 351,000 5-star ratings from happy users 😍
         </Typography>
       </Box>
