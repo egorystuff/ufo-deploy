@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "XS4572KU22.com.appossum.ufo.app",
+        "paths": [ "/articles/*", "/profile/*" ]
+      }
+    ]
+  }
+}
