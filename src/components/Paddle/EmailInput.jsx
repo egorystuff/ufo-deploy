@@ -1,12 +1,28 @@
 import { useState, useRef, useEffect } from "react";
 import { Button, Typography, Box, Link } from "@mui/material";
-import { useUserStore } from "@/store/store";
+import { useFirestoreDataStore, useUserStore } from "@/store/store";
 import { UfoLogo } from "./UfoLogo";
 
 export const EmailInput = ({ onNext }) => {
   const [email, setEmail] = useState("");
   const inputRef = useRef(null);
   const [isValidEmail, setIsValidEmail] = useState(false);
+
+  const createUser = useFirestoreDataStore((state) => state.createUser);
+  const sendSignInEmail = useFirestoreDataStore((state) => state.sendSignInEmail);
+  const age = useUserStore((state) => state.age);
+  const gender = useUserStore((state) => state.gender);
+  const height = useUserStore((state) => state.height);
+  const weight = useUserStore((state) => state.weight);
+  const wishlist = useUserStore((state) => state.wishlist);
+  const listOfIntentions = useUserStore((state) => state.listOfIntentions);
+  const inspiringEvents = useUserStore((state) => state.inspiringEvents);
+  const fastFoodTime = useUserStore((state) => state.fastFoodTime);
+  const nonHungerTriggers = useUserStore((state) => state.nonHungerTriggers);
+  const weightLossSuccess = useUserStore((state) => state.weightLossSuccess);
+  const mealPreference = useUserStore((state) => state.mealPreference);
+  const startDay = useUserStore((state) => state.startDay);
+  const healthConditions = useUserStore((state) => state.healthConditions);
 
   const updateUserData = useUserStore((state) => state.updateUserData);
 
@@ -28,7 +44,28 @@ export const EmailInput = ({ onNext }) => {
 
     const trimmedEmail = email.trim();
     updateUserData("email", trimmedEmail);
-    onNext();
+
+    const onboardingData = {
+      userAge: age,
+      userHeight: height,
+      userInitWeight: weight,
+      userInspEvents: inspiringEvents,
+      userIntentions: listOfIntentions,
+      userSex: gender,
+      userWeightLoss: weightLossSuccess,
+      userFastFood: fastFoodTime,
+      userGoals: wishlist,
+      userEats: nonHungerTriggers,
+      userConditions: healthConditions,
+    };
+
+    localStorage.setItem("email", trimmedEmail);
+    localStorage.setItem("mealPreference", mealPreference);
+    localStorage.setItem("startDay", startDay);
+    localStorage.setItem("onboardingData", JSON.stringify(onboardingData));
+    sendSignInEmail(trimmedEmail);
+
+    // onNext();
   };
 
   const handleKeyDown = (event) => {

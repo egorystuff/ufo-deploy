@@ -15,10 +15,18 @@ export const PreferredMealSchedule = ({ onNext }) => {
     }
 
     const selectedDiet = MealDiets.find((diet) => diet.type === mealPreference);
-    const plans =
-      selectedDiet?.plans.filter((plan) => dailyCalories >= plan.kcalMin && dailyCalories <= plan.kcalMax) || [];
+    if (!selectedDiet) {
+      setFilteredPlans([]);
+      return;
+    }
 
-    setFilteredPlans(plans);
+    const plansWithTolerance = selectedDiet.plans.filter((plan) => {
+      const lowerBound = plan.kcalMin * 0.9; // -10%
+      const upperBound = plan.kcalMax * 1.1; // +10%
+      return dailyCalories >= lowerBound && dailyCalories <= upperBound;
+    });
+
+    setFilteredPlans(plansWithTolerance);
   }, [mealPreference, dailyCalories]);
 
   const handleNext = (planId) => {
@@ -36,24 +44,36 @@ export const PreferredMealSchedule = ({ onNext }) => {
         The meal schedule directly impacts your meal plan, choose the one that suits you best.
       </Typography>
 
-      <Box sx={{ mt: 3 }}>
-        {filteredPlans.map((plan) => (
-          <BaseSelectButton key={plan.id} onClick={() => handleNext(plan.id)} sx={{ textAlign: "left" }}>
-            <Box component='span'>
-              {plan.title}
-              <Box
-                component='span'
-                sx={{
-                  display: "block",
-                  fontSize: "0.8rem",
-                  color: "text.secondary",
-                }}>
-                ({plan.kcalMin}-{plan.kcalMax} kcal)
+      {filteredPlans.length > 0 ? (
+        <Box sx={{ mt: 3 }}>
+          {filteredPlans.map((plan) => (
+            <BaseSelectButton key={plan.id} onClick={() => handleNext(plan.id)} sx={{ textAlign: "left" }}>
+              <Box component='span'>
+                {plan.title}
+                <Box
+                  component='span'
+                  sx={{
+                    display: "block",
+                    fontSize: "0.8rem",
+                    color: "text.secondary",
+                  }}>
+                  ({plan.kcalMin}-{plan.kcalMax} kcal)
+                </Box>
               </Box>
-            </Box>
-          </BaseSelectButton>
-        ))}
-      </Box>
+            </BaseSelectButton>
+          ))}
+        </Box>
+      ) : (
+        <Box sx={{ mt: 5, p: 2, backgroundColor: "#F5F5F5", borderRadius: "12px", border: "0.4px solid #DFDFDF" }}>
+          <Typography variant='h7' align='сenter' sx={{ color: "primary.main", fontWeight: 450 }} component='div'>
+            No meal schedules available for your preferences.
+          </Typography>
+
+          <Typography variant='h6' align='сenter' className='survey-subtitle' component='div'>
+            Please adjust your meal preference or daily calories.
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 };

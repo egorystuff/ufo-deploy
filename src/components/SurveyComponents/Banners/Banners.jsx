@@ -43,7 +43,7 @@ export const Banners = ({ activeStep, onBannerClose, onBannerOpen }) => {
   if (!isBanner) return null;
 
   return (
-    <div ref={bannerAnimationParent} className='banner'>
+    <div ref={bannerAnimationParent} className='banner' style={{ height: "100vh - 20px" }}>
       {React.cloneElement(stepBanners[currentBannerActive].component, {
         onNext: handleBannerNext,
         onClose: handleBannerClose,

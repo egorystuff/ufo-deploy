@@ -27,9 +27,9 @@ export const IdealWeight = ({ onNext }) => {
   const validateWeight = (weightValue) => {
     const currentWeight = isMetric ? userWeight : userWeight * 2.20462;
 
-    if (!weightValue || weightValue > currentWeight) {
-      return "Goal cannot be accepted";
-    }
+    // if (!weightValue || weightValue > currentWeight) {
+    //   return "Goal cannot be accepted";
+    // }
     return "Goal accepted!";
   };
 
@@ -38,7 +38,7 @@ export const IdealWeight = ({ onNext }) => {
     setIdealWeight(value);
 
     const weightValue = parseFloat(value);
-    if (isNaN(weightValue) || weightValue > userWeight) {
+    if (isNaN(weightValue)) {
       setErrorMessage("Goal cannot be accepted");
     } else {
       setErrorMessage("Goal accepted!");

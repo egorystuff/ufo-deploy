@@ -21,7 +21,7 @@ export const HealtConditionsCheckbox = ({ onNext }) => {
       buttonText='No risks diagnosed'
       options={options}
       onNext={onNext}
-      updateUserDataKey='healtConditions'
+      updateUserDataKey='healthConditions'
       updateUserData={updateUserData}
     />
   );
